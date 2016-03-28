@@ -6,7 +6,7 @@ body,html,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select,butto
 body{line-height: 1.5;background: #ffffff;overflow-x:hidden} 
 ol,ul,li{list-style:none;}         
 a,a:link,a:visited,a:hover,a:active{text-decoration:none;outline:0;}
-:focus{outline: 0};      
+:focus{outline: 0}
 img,button,input{border:0;}            
 table {border-collapse: collapse;border-spacing: 0}             
 textarea,button,input,select,a{outline:0;}         
@@ -19,6 +19,15 @@ h1,h2,h3,h4,h5,h6,em,i,address{font-weight: normal;font-style: normal;}
 /*main*/
 *{box-sizing: border-box;}
 html,body{height: 100%;}
+@media
+only screen and (-webkit-max-device-pixel-ratio: 1)      and (min-width: 1000px),
+only screen and (   max--moz-device-pixel-ratio: 1)      and (min-width: 1000px),
+only screen and (        max-device-pixel-ratio: 1)      and (min-width: 1000px) {
+
+    html{font-size:75px!important;}
+
+}
+
 body{
 	font-size: 12px;
 	font-family: Lato,"Microsoft YaHei",sans-serif;
@@ -39,17 +48,21 @@ a:hover {
 }
 .main{
 	overflow: hidden;
-	display: table;
-	padding: 0.66667rem;
 	width:100%;
 	height:100%;
 	background-color: #22c3aa;
 	color: #eef3f0;
 }
 .section{
+	display: table;
+    padding: 0.66667rem;
+    width:100%;
+    height: 100%;
+}
+.table-cell{
 	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
+    vertical-align: middle;
+    text-align: center;
 }
 .title{
 	font-size: 1.6rem;
