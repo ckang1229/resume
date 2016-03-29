@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<main class="main">
-			<div class="section active">
+			<div class="section active" style="z-index:7">
                 <div class="table-cell">
                     <img src="img/head.png" class="head"/>
                     <h1 class="title">陈 康</h1>
@@ -20,10 +20,10 @@
                     </p>
                 </div>
 			</div>
-            <div class="section leaving">
+            <div class="section leaving" style="z-index:6">
                 <div class="table-cell">
                     <img src="img/head.png" class="head"/>
-                    <h1 class="title">陈 康</h1>
+                    <h2 class="title">page2</h2>
                     <p class="subtitle">一腔热血的激情 一夜失眠的创意 一个像素的执着</p>
                     <h4>前端工程师</h4>
                     <p>
@@ -31,6 +31,58 @@
                     </p>
                 </div>
             </div>
+            <div class="section leaving" style="z-index:5">
+                <div class="table-cell">
+                    <img src="img/head.png" class="head"/>
+                    <h2 class="title">page3</h2>
+                    <p class="subtitle">一腔热血的激情 一夜失眠的创意 一个像素的执着</p>
+                    <h4>前端工程师</h4>
+                    <p>
+                        <a href="mailto:http://672247608@qq.com">672247608@qq.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="section leaving" style="z-index:4">
+                <div class="table-cell">
+                    <img src="img/head.png" class="head"/>
+                    <h2 class="title">page4</h2>
+                    <p class="subtitle">一腔热血的激情 一夜失眠的创意 一个像素的执着</p>
+                    <h4>前端工程师123</h4>
+                    <p>
+                        <a href="mailto:http://672247608@qq.com">672247608@qq.com</a>
+                    </p>
+                </div>
+            </div>
 		</main>
+        <nav class="navbar">
+            <ul>
+                <li class="nav-list active" data-index="0">
+                    <span class="discription">首页</span>
+                </li>
+                <li class="nav-list" data-index="1">
+                    <span class="discription">首页</span>
+                </li>
+                <li class="nav-list" data-index="2">
+                    <span class="discription">首页</span>
+                </li>
+                <li class="nav-list" data-index="3">
+                    <span class="discription">首页</span>
+                </li>
+            </ul>
+        </nav>
+        <script src="js/lib/sea.js"></script>
+        <script>
+            seajs.config({
+                base: './js/common',
+                alias: {
+                    addEvent: 'addEvent.js',
+                    isPc: 'isPc.js',
+                    pageSlide: 'pageSlide.js',
+                    setClass: 'setClass.js'
+                }
+            });
+
+            seajs.use('./js/main.js');
+        </script>
 	</body>
 </html>

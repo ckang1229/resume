@@ -15,8 +15,7 @@ input[type=button]{cursor:pointer;}
 h1,h2,h3,h4,h5,h6{line-height: 1.2}
 h1,h2,h3,h4,h5,h6,em,i,address{font-weight: normal;font-style: normal;}
 
-
-/*main*/
+/*global*/
 *{box-sizing: border-box;}
 html,body{height: 100%;}
 @media
@@ -29,35 +28,42 @@ only screen and (        max-device-pixel-ratio: 1)      and (min-width: 600px) 
 }
 
 body{
-	font-size: 12px;
-	font-family: Lato,"Microsoft YaHei",sans-serif;
-	font-weight: 400;
+    font-size: 12px;
+    font-family: Lato,"Microsoft YaHei",sans-serif;
+    font-weight: 400;
 }
 h4{
-	font-size: 0.53333rem;
-	color:#fff;
-	margin-bottom: 0.21333rem;
+    font-size: 0.53333rem;
+    color:#fff;
+    margin-bottom: 0.21333rem;
 }
 a{
-	color: #008a75;
-	font-size: 0.4rem;
-	transition: .5s;
+    color: #008a75;
+    font-size: 0.4rem;
+    transition: .5s;
 }
 a:hover {
     color: #9f3;
 }
+
+
+/*main*/
 .main{
+	position: relative;
 	overflow: hidden;
 	width:100%;
 	height:100%;
-	background-color: #22c3aa;
 	color: #eef3f0;
+    background-color: #22c3aa;
 }
 .section{
+    position: absolute;
 	display: table;
     padding: 0.66667rem;
     width:100%;
     height: 100%;
+    background-color: #22c3aa;
+    transition: .5s ease;
 }
 .table-cell{
 	display: table-cell;
@@ -71,12 +77,70 @@ a:hover {
 .head{
 	width: 4.66667rem;
 	height: 4.66667rem;
-	border: 0.26667rem solid #aee2d9;
+	border: 0;
+    -webkit-border-radius: 50%;
 	border-radius: 50%;
+}
+@media only screen and (min-width: 600px){
+    .head{
+        border: 0.26667rem solid #aee2d9;
+    }
 }
 .subtitle{
 	margin-top: 0.53333rem;
 	margin-bottom: 0.06667rem;
 	font-size: 0.4rem;
 	color: #aee2d9;
+}
+
+/*nav*/
+.navbar{
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    z-index:8;
+    transform: translateY(-50%);
+}
+.nav-list{
+    position: relative;
+    margin: 10px;
+    width: 8px;
+    height: 8px;
+    border:1px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.nav-list:hover .discription{
+    opacity: 1;
+}
+.nav-list::after{
+    content: '';
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left: -7px;
+    margin-top: -7px;
+    width:14px;
+    height:14px;
+}
+.nav-list.active{
+    background-color: #000;
+}
+.discription{
+    position: absolute;
+    top:50%;
+    right:0;
+    width:40px;
+    height: 16px;
+    line-height: 16px;
+    font-size:1.3em;
+    color:#fff;
+    opacity: 0;
+    transform: translate(120%, -50%);
+    transition: .5s;
+}
+@media only screen and (max-width: 1000px) {
+    .nav-list{
+        display: none;
+    }
 }
