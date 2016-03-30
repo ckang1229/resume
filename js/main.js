@@ -12,9 +12,10 @@ define(function(require, exports, module){
         var cloneSection = cloneMain.getElementsByClassName('section');
 
         if(isPc) {
+            doc.documentElement.style.fontSize = '50px';
             document.getElementById('navbar').style.display = 'block';
 
-            cloneMain.style.cssText = 'height: 100%;overflow: hidden';
+            cloneMain.style.cssText = 'height: 100%;overflow: hidden;-ms-touch-action:none';
 
             for (var i = 0, len = cloneSection.length; i < len; i++) {
                 cloneSection[i].style.position = 'absolute';
@@ -33,11 +34,13 @@ define(function(require, exports, module){
             setClass.removeClass(navList[oldIndex], ['active']);
             if(newIndex > oldIndex){
                 for(var i= 0;i<newIndex;i++){
+                    item[i].style.msTransform = 'translateY(-100%)';
                     item[i].style.transform = 'translateY(-100%)';
                     setClass.addClass(item[i], ['leaving']);
                 }
             }else{
                 for(var i= oldIndex -1;i<oldIndex && i >= newIndex;i--){
+                    item[i].style.msTransform = 'translateY(0)';
                     item[i].style.transform = 'translateY(0)';
                     setClass.removeClass(item[i], ['leaving']);
                 }
