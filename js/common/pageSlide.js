@@ -6,6 +6,7 @@ define(function(require, exports, module){
         var moving = false;
         var _addEvent = require('addEvent');
         var _isPc = require('isPc');
+        var setClass = require('setClass');
 
         var activeIndex = 0;
         var navList = doc.getElementsByClassName('nav-list');
@@ -13,7 +14,7 @@ define(function(require, exports, module){
 
         function controller(callback, oldIndex, newIndex){
             moving = true;
-            callback(oldIndex, newIndex);
+            callback(oldIndex, newIndex, setClass);
             setTimeout(function(){
                 moving = false;
             },800)
@@ -29,7 +30,7 @@ define(function(require, exports, module){
 
                     controller(callback, activeIndex, --activeIndex);
                 }else{
-                    if(activeIndex == 3) return;
+                    if(activeIndex == 4) return;
 
                     controller(callback, activeIndex, ++activeIndex);
                 }

@@ -27,14 +27,33 @@ only screen and (        max-device-pixel-ratio: 1)      and (min-width: 600px) 
 }
 
 body{
-    font-size: 12px;
+    font-size: 0.2133333333rem;
     font-family: Lato,"Microsoft YaHei",sans-serif;
     font-weight: 400;
+}
+h2, h3, h4{
+    margin-top: 0.21333rem;
+    margin-bottom: 0.21333rem;
+}
+h1{
+    margin-bottom: 0.53333rem;
+}
+h2{
+    font-size:0.7rem;
+}
+h3{
+    font-size: 0.5rem;
 }
 h4{
     font-size: 0.46rem;
     color:#fff;
     margin-bottom: 0.21333rem;
+}
+p{
+    margin-top: 0.21333rem;
+    margin-bottom: 0.21333rem;
+    font-size: 0.38rem;
+    color: #aee2d9;
 }
 a{
     color: #008a75;
@@ -49,16 +68,13 @@ a:hover {
 /*main*/
 .main{
 	position: relative;
-	overflow: hidden;
 	width:100%;
-	height:100%;
 	color: #eef3f0;
     background-color: #22c3aa;
 }
 .section{
-    position: absolute;
 	display: table;
-    padding: 0.66667rem;
+    padding: 2rem 0.66667rem;
     width:100%;
     height: 100%;
     background-color: #22c3aa;
@@ -74,7 +90,7 @@ a:hover {
 }
 .title{
 	font-size: 1.3rem;
-	text-shadow: 1px 0.02667rem #22c3aa,0.02667rem 0.05333rem #aee2d9;
+	text-shadow: 0.0133333333rem 0.02667rem #22c3aa,0.02667rem 0.05333rem #aee2d9;
 }
 .head{
 	width: 4.4rem;
@@ -94,9 +110,46 @@ a:hover {
 	font-size: 0.4rem;
 	color: #aee2d9;
 }
+.tag-list{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 0;
+}
+.tag{
+    display: inline-block;
+    margin-right: 0.12rem;
+    margin-bottom: 0.04rem;
+    padding: 0.0266666667rem 0.1066666667rem;
+    font-size: 0.3333333333rem;
+    color: #aee2d9;
+    background-color: #096254;
+    border-radius: 0.1066666667rem;
+    opacity: 0.5;
+}
+.tag.expert{opacity: 1}
+.tag.familiar {opacity: 0.75;}
+
+.share-list{
+    margin-right: 6px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #008a75;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-image: url(../img/index.png);
+}
+.share-list:hover{
+    background-color: #096254;
+    border-radius: 5px;
+}
+.share-weibo{background-position: -160px 0;}
+.share-github{background-position: -160px 40px;}
 
 /*nav*/
 #navbar{
+    display: none;
     position: absolute;
     top: 50%;
     left: 18px;

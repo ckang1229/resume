@@ -3,16 +3,33 @@
  */
 define(function(require, exports, module){
     (function(win, doc, undefined){
-        var pageSlide = require('pageSlide');
-        var setClass = require('setClass');
+        var pageSlide, setClass;
         var isPc = require('isPc');
-
         var item = doc.getElementsByClassName('section');
         var navList = doc.getElementsByClassName('nav-list');
         var main = item[0].parentNode;
         var cloneMain = main.cloneNode(true);
+        var cloneSection = cloneMain.getElementsByClassName('section');
 
-        function pageChange(oldIndex, newIndex){
+        if(isPc) {
+            document.getElementById('navbar').style.display = 'block';
+
+            cloneMain.style.cssText = 'height: 100%;overflow: hidden';
+
+            for (var i = 0, len = cloneSection.length; i < len; i++) {
+                cloneSection[i].style.position = 'absolute';
+                cloneSection[i].style.height = '100%';
+            }
+
+            main.parentNode.replaceChild(cloneMain, main);
+
+            //传入回调函数
+            require.async(['pageSlide'], function(pageSlide){
+                pageSlide(pageChange);
+            })
+        }
+
+        function pageChange(oldIndex, newIndex, setClass){
             setClass.removeClass(navList[oldIndex], ['active']);
             if(newIndex > oldIndex){
                 for(var i= 0;i<newIndex;i++){
@@ -26,23 +43,6 @@ define(function(require, exports, module){
                 }
             }
             setClass.addClass(navList[newIndex], ['active']);
-        }
-
-        if(isPc) {
-            //传入回调函数
-            pageSlide(pageChange);
-        }else{
-            document.getElementById('navbar').style.display = 'none';
-
-            cloneMain.style.overflow = 'auto';
-            var cloneSection = cloneMain.getElementsByClassName('section');
-
-            for(var i= 0,len = cloneSection.length;i<len; i++){
-                cloneSection[i].style.position = 'static';
-                cloneSection[i].style.height = 'auto';
-            }
-
-            main.parentNode.replaceChild(cloneMain, main);
         }
     })(window, document)
 
