@@ -30,6 +30,8 @@ define(function(require, exports, module){
             //传入回调函数
             pageSlide(pageChange);
         }else{
+            document.getElementById('navbar').style.display = 'none';
+
             cloneMain.style.overflow = 'auto';
             var cloneSection = cloneMain.getElementsByClassName('section');
 

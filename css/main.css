@@ -13,7 +13,6 @@ textarea,button,input,select,a{outline:0;}
 textarea{resize:none;overflow:auto;} 
 input[type=button]{cursor:pointer;}
 h1,h2,h3,h4,h5,h6{line-height: 1.2}
-h1,h2,h3,h4,h5,h6,em,i,address{font-weight: normal;font-style: normal;}
 
 /*global*/
 *{box-sizing: border-box;}
@@ -33,7 +32,7 @@ body{
     font-weight: 400;
 }
 h4{
-    font-size: 0.53333rem;
+    font-size: 0.46rem;
     color:#fff;
     margin-bottom: 0.21333rem;
 }
@@ -71,12 +70,12 @@ a:hover {
     text-align: center;
 }
 .title{
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	text-shadow: 1px 0.02667rem #22c3aa,0.02667rem 0.05333rem #aee2d9;
 }
 .head{
-	width: 4.66667rem;
-	height: 4.66667rem;
+	width: 4.4rem;
+	height: 4.4rem;
 	border: 0;
     -webkit-border-radius: 50%;
 	border-radius: 50%;
@@ -94,7 +93,7 @@ a:hover {
 }
 
 /*nav*/
-.navbar{
+#navbar{
     position: absolute;
     top: 50%;
     left: 18px;
@@ -138,9 +137,4 @@ a:hover {
     opacity: 0;
     transform: translate(120%, -50%);
     transition: .5s;
-}
-@media only screen and (max-width: 1000px) {
-    .nav-list{
-        display: none;
-    }
 }
