@@ -5,21 +5,6 @@
 			return navigator.userAgent.indexOf('iPhone') == -1 ? false : true;
 		})()
 
-        var isPc = (function(){
-            var userAgentInfo = win.navigator.userAgent;
-            var Agents = ["Android", "iPhone",
-                "SymbianOS", "Windows Phone",
-                "iPad", "iPod"];
-            var flag = true;
-            for (var v = 0, len = Agents.length; v < len; v++) {
-                if (userAgentInfo.indexOf(Agents[v]) > 0) {
-                    flag = false;
-                    break;
-                }
-            }
-            return flag;
-        })()
-
 		if (isIPhone) {
    		 // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
 		   if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
