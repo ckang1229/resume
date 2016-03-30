@@ -44,7 +44,6 @@ define(function(require, exports, module){
                     setClass.removeClass(item[i], ['leaving']);
                 }
             }
-            setClass.removeClass(item[newIndex], ['leaving']);
             setClass.addClass(navList[newIndex], ['active']);
         }
     })(window, document)
