@@ -17,10 +17,12 @@ define(function(require, exports, module){
             if(newIndex > oldIndex){
                 for(var i= 0;i<newIndex;i++){
                     item[i].style.transform = 'translateY(-100%)';
+                    setClass.addClass(item[i], ['leaving']);
                 }
             }else{
                 for(var i= oldIndex -1;i<oldIndex && i >= newIndex;i--){
                     item[i].style.transform = 'translateY(0)';
+                    setClass.removeClass(item[i], ['leaving']);
                 }
             }
             setClass.addClass(navList[newIndex], ['active']);

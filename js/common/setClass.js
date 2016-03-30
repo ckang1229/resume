@@ -5,7 +5,13 @@ define(function(require, exports, module){
     exports.addClass = function(el, newClass){
         var classArr = el.className.split(' ');
 
-        el.className = classArr.concat(newClass).join(' ');
+        for(var i= 0,len = newClass.length;i<len;i++){
+            if(classArr.indexOf(newClass[i]) == -1){
+                classArr.push(newClass[i]);
+            }
+        }
+
+        el.className = classArr.join(' ');
     }
 
     exports.removeClass = function(el, newClass){

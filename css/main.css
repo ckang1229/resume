@@ -64,6 +64,9 @@ a:hover {
     background-color: #22c3aa;
     transition: .5s ease;
 }
+.section.leaving{
+    background: #9f3;
+}
 .table-cell{
 	display: table-cell;
     vertical-align: middle;
