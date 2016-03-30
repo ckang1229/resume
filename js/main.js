@@ -12,7 +12,6 @@ define(function(require, exports, module){
         var cloneSection = cloneMain.getElementsByClassName('section');
 
         if(isPc) {
-            doc.documentElement.style.fontSize = '50px';
             document.getElementById('navbar').style.display = 'block';
 
             cloneMain.style.cssText = 'height: 100%;overflow: hidden;-ms-touch-action:none';
