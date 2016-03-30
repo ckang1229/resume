@@ -23,6 +23,16 @@ only screen and (   max--moz-device-pixel-ratio: 1)      and (min-width: 600px),
 only screen and (        max-device-pixel-ratio: 1)      and (min-width: 600px) {
 
     html{font-size:50px!important;}
+    .head{
+        border: 0.26667rem solid #aee2d9!important;
+    }
+    .share-list:hover{
+        background-color: #096254;
+        border-radius: 5px;
+    }
+    a:hover {
+        color: #9f3;
+    }
 
 }
 
@@ -30,6 +40,7 @@ body{
     font-size: 0.2133333333rem;
     font-family: Lato,"Microsoft YaHei",sans-serif;
     font-weight: 400;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 h2, h3, h4{
     margin-top: 0.21333rem;
@@ -59,9 +70,6 @@ a{
     color: #008a75;
     font-size: 0.4rem;
     transition: .5s;
-}
-a:hover {
-    color: #9f3;
 }
 
 
@@ -99,11 +107,6 @@ a:hover {
     -webkit-border-radius: 50%;
 	border-radius: 50%;
 }
-@media only screen and (min-width: 600px){
-    .head{
-        border: 0.26667rem solid #aee2d9;
-    }
-}
 .subtitle{
 	margin-top: 0.53333rem;
 	margin-bottom: 0.06667rem;
@@ -139,10 +142,6 @@ a:hover {
     -moz-border-radius: 50%;
     border-radius: 50%;
     background-image: url(../img/index.png);
-}
-.share-list:hover{
-    background-color: #096254;
-    border-radius: 5px;
 }
 .share-weibo{background-position: -160px 0;}
 .share-github{background-position: -160px 40px;}
